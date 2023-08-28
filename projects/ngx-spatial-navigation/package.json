@@ -2,8 +2,10 @@
   "name": "ngx-spatial-navigation",
   "version": "0.0.1",
   "peerDependencies": {
+    "@angular/cdk": "^14.2.0",
     "@angular/common": "^14.2.0",
-    "@angular/core": "^14.2.0"
+    "@angular/core": "^14.2.0",
+    "@bbc/tv-lrud-spatial": "^0.0.5"
   },
   "dependencies": {
     "tslib": "^2.3.0"
