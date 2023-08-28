@@ -1,6 +1,22 @@
 {
   "name": "ngx-spatial-navigation",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "description": "Spatial Navigation in Angular",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyawswarthwin/ngx-spatial-navigation.git"
+  },
+  "keywords": [
+    "angular",
+    "ionic",
+    "spatial-navigation"
+  ],
+  "author": "Kyaw Swar Thwin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kyawswarthwin/ngx-spatial-navigation/issues"
+  },
+  "homepage": "https://github.com/kyawswarthwin/ngx-spatial-navigation#readme",
   "peerDependencies": {
     "@angular/cdk": "^14.2.0",
     "@angular/common": "^14.2.0",

@@ -1,27 +1,56 @@
-# NgxSpatialNavigation
+# ngx-spatial-navigation
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.12.
+Spatial Navigation in Angular
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+```sh
+npm i ngx-spatial-navigation
+```
 
-## Code scaffolding
+## Usage
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Import the `NgxSpatialNavigationModule` module into your `AppModule`:
 
-## Build
+```typescript
+import { NgxSpatialNavigationModule } from "ngx-spatial-navigation";
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+@NgModule({
+  imports: [NgxSpatialNavigationModule],
+})
+export class AppModule {}
+```
 
-## Running unit tests
+Add the `navRoot` and `navFocusable` directives to your template:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```html
+<div navRoot>
+  <div navFocusable>First element</div>
+  <div navFocusable>Second element</div>
+  <div navFocusable>Third element</div>
+</div>
+```
 
-## Running end-to-end tests
+You can now navigate through the elements using the arrow keys on your keyboard.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## API
 
-## Further help
+### navRoot
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+The `navRoot` directive is used to mark the root element where navigation will take place. There must be only one in the application.
+
+### navSection
+
+The `navSection` directive is needed to combine elements into a section.
+
+- `ignore` - If `true`, the section element will not be considered focusable and will be skipped over.
+
+### navFocusable
+
+The `navFocusable` directive is used to mark elements that can be focusable.
+
+- `ignore` - If `true`, the element will not be considered focusable and will be skipped over.
+
+## License
+
+MIT. Copyright (c) Kyaw Swar Thwin &lt;myanmarunicorn@gmail.com&gt;

@@ -1,6 +1,13 @@
 import { BooleanInput, coerceBooleanProperty } from '@angular/cdk/coercion';
 import {
-    AfterContentInit, ContentChildren, Directive, ElementRef, Input, OnChanges, QueryList, Renderer2
+  AfterContentInit,
+  ContentChildren,
+  Directive,
+  ElementRef,
+  Input,
+  OnChanges,
+  QueryList,
+  Renderer2,
 } from '@angular/core';
 
 import { NavFocusableDirective } from './nav-focusable.directive';
@@ -37,7 +44,7 @@ export class NavSectionDirective implements OnChanges, AfterContentInit {
     this.renderer.addClass(this.el.nativeElement, 'lrud-container');
   }
 
-  ngOnChanges() {
+  ngOnChanges(): void {
     if (this.ignore) {
       this.renderer.addClass(this.el.nativeElement, 'lrud-ignore');
     } else {
@@ -45,7 +52,7 @@ export class NavSectionDirective implements OnChanges, AfterContentInit {
     }
   }
 
-  ngAfterContentInit() {
+  ngAfterContentInit(): void {
     if (!this.ignore && this.focus) {
       setTimeout(() => {
         this.focusables.first?.nativeElement.focus();

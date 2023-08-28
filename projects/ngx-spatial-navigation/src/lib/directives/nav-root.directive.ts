@@ -9,7 +9,8 @@ import { getNextFocus } from '@bbc/tv-lrud-spatial';
 export class NavRootDirective {
   constructor(private el: ElementRef) {}
 
-  @HostListener('keydown', ['$event']) onKeyDown(event: KeyboardEvent) {
+  @HostListener('keydown', ['$event'])
+  handleKeyDown(event: KeyboardEvent): void {
     const element = event.target as HTMLElement;
 
     if (

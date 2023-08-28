@@ -1,6 +1,12 @@
 import { BooleanInput, coerceBooleanProperty } from '@angular/cdk/coercion';
 import {
-    AfterContentInit, Directive, ElementRef, HostListener, Input, OnChanges, Renderer2
+  AfterContentInit,
+  Directive,
+  ElementRef,
+  HostListener,
+  Input,
+  OnChanges,
+  Renderer2,
 } from '@angular/core';
 
 @Directive({
@@ -29,7 +35,7 @@ export class NavFocusableDirective implements OnChanges, AfterContentInit {
     this.renderer.setAttribute(this.el.nativeElement, 'tabindex', '-1');
   }
 
-  ngOnChanges() {
+  ngOnChanges(): void {
     if (this.ignore) {
       this.renderer.addClass(this.el.nativeElement, 'lrud-ignore');
     } else {
@@ -37,7 +43,7 @@ export class NavFocusableDirective implements OnChanges, AfterContentInit {
     }
   }
 
-  ngAfterContentInit() {
+  ngAfterContentInit(): void {
     if (!this.ignore && this.focus) {
       setTimeout(() => {
         this.el.nativeElement.focus();
@@ -45,18 +51,19 @@ export class NavFocusableDirective implements OnChanges, AfterContentInit {
     }
   }
 
-  @HostListener('focus', ['$event']) onFocus(event: FocusEvent) {
+  @HostListener('focus', ['$event'])
+  handleFocus(event: FocusEvent): void {
     const element = event.target as HTMLElement;
     if (element.nodeName.toLowerCase() === 'ion-searchbar') {
       this.el.nativeElement.setFocus();
     }
   }
 
-  @HostListener('keydown', ['$event']) onKeyDown(event: KeyboardEvent) {
+  @HostListener('keydown', ['$event'])
+  handleKeyDown(event: KeyboardEvent): void {
     const element = event.currentTarget as HTMLElement;
     if (event.key === 'Enter') {
       event.preventDefault();
-
       element.click();
     }
   }

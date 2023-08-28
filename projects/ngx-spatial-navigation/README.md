@@ -1,24 +1,56 @@
-# NgxSpatialNavigation
+# ngx-spatial-navigation
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.0.
+Spatial Navigation in Angular
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name --project ngx-spatial-navigation` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-spatial-navigation`.
-> Note: Don't forget to add `--project ngx-spatial-navigation` or else it will be added to the default project in your `angular.json` file. 
+```sh
+npm i ngx-spatial-navigation
+```
 
-## Build
+## Usage
 
-Run `ng build ngx-spatial-navigation` to build the project. The build artifacts will be stored in the `dist/` directory.
+Import the `NgxSpatialNavigationModule` module into your `AppModule`:
 
-## Publishing
+```typescript
+import { NgxSpatialNavigationModule } from "ngx-spatial-navigation";
 
-After building your library with `ng build ngx-spatial-navigation`, go to the dist folder `cd dist/ngx-spatial-navigation` and run `npm publish`.
+@NgModule({
+  imports: [NgxSpatialNavigationModule],
+})
+export class AppModule {}
+```
 
-## Running unit tests
+Add the `navRoot` and `navFocusable` directives to your template:
 
-Run `ng test ngx-spatial-navigation` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```html
+<div navRoot>
+  <div navFocusable>First element</div>
+  <div navFocusable>Second element</div>
+  <div navFocusable>Third element</div>
+</div>
+```
 
-## Further help
+You can now navigate through the elements using the arrow keys on your keyboard.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## API
+
+### navRoot
+
+The `navRoot` directive is used to mark the root element where navigation will take place. There must be only one in the application.
+
+### navSection
+
+The `navSection` directive is needed to combine elements into a section.
+
+- `ignore` - If `true`, the section element will not be considered focusable and will be skipped over.
+
+### navFocusable
+
+The `navFocusable` directive is used to mark elements that can be focusable.
+
+- `ignore` - If `true`, the element will not be considered focusable and will be skipped over.
+
+## License
+
+MIT. Copyright (c) Kyaw Swar Thwin &lt;myanmarunicorn@gmail.com&gt;
